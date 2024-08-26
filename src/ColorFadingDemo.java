@@ -44,7 +44,14 @@ public class ColorFadingDemo extends JPanel implements ActionListener {
             super.paintComponent(g);
             Graphics2D g2d = (Graphics2D) g.create();
             g2d.setComposite(AlphaComposite.SrcOver.derive(alpha));
-            g2d.fillOval(x,y,50,50);
+            g2d.setStroke(new BasicStroke(2));
+            g2d.setColor(new Color(255,0,255));
+            g2d.fillOval(x,y,100,100);
+            g2d.setColor(new Color(0,255,0));
+
+            g2d.setStroke(new BasicStroke(7));
+            g2d.drawOval(x+5,y+5,90,90);
+
             g2d.dispose();
 
         }
